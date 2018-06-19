@@ -1,8 +1,5 @@
 $(document).ready(function() {
 
-
-
-
 	function wResize(){ //делает header во весь экран при любом разрешении
 		$("header").css("min-height", $(window).height());
 		$("header .overlay").css("min-height", $(window).height());
@@ -244,5 +241,6 @@ $(window).resize(function(){
   	$(".answer").text("").css("font-weight", "normal").css("color", "red")
   })
 
-
+	$(".loader_inner").fadeOut(); 
+	$(".loader").delay(400).fadeOut("slow"); 
 })
