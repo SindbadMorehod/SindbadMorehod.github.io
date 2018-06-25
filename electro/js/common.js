@@ -6,6 +6,8 @@ $('.slider_top').slick({
 
 $(".slider_bottom").slick({
   slidesToShow: 4,
-  infinite: false
+  infinite: false,
+  nextArrow: '<i class="fas fa-angle-right"></i>',
+  prevArrow: '<i class="fas fa-angle-left"></i>'
 })
 });
