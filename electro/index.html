@@ -149,6 +149,33 @@
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus voluptate et ea cupiditate, voluptatum aperiam officia est excepturi magni similique dicta nihil in assumenda quas ratione obcaecati unde molestiae qui debitis quidem repellendus placeat id esse? Libero, optio? Debitis, nemo.
 		</div>
 	</section>
+	<div class="overlay"></div>
+	<div class="callback">
+		<form action="mail.php" id="callback">
+			<h3>Обратная связь</h3>
+			<!-- Hidden Required Fields -->
+		<input type="hidden" name="project_name" value="Electro">
+		<input type="hidden" name="admin_email" value="suricov_max@mail.ru">
+		<input type="hidden" name="form_subject" value="Callback">
+		<!-- END Hidden Required Fields -->
+			<div class="descr">
+				Впишите данные в форму ниже и мы свяжемся с Вами
+			</div>
+			<div class="wrap">
+				<label for="name">Ваше имя</label>
+				<input type="text" required placeholder="Иванов Сергей" id="name" class="name">
+			</div>
+			<div class="wrap">
+				<label for="email">Email</label>
+				<input type="text" id="email" required class="email" placeholder="ivanov@gmail.com">
+			</div>
+			<div class="wrap">
+				<label for="phone">Ваш телефон</label>
+				<input type="phone" id="phone" class="phone" placeholder="+79876543210">
+			</div>
+			<button type="submit" class="btn">Отправить</button>
+		</form>
+	</div>
 
 	<footer>
 		<ul>
@@ -156,7 +183,7 @@
 			<li><a href="#">Каталог</a></li>
 			<li><a href="#">Производители</a></li>
 			<li><a href="#">Карта сайта</a></li>
-			<li><a href="#">Обратная связь</a></li>
+			<li><a href="#callback" class="call">Обратная связь</a></li>
 			<li><a href="#">Техническая поддержка</a></li>
 			<li><a href="#">Еще один пункт</a></li>
 		</ul>
