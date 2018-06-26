@@ -3,16 +3,19 @@ $(function() {
 function resizeNav(){
 	var w = $(window).width();
 	if (w>1280){
-		$("header nav").css("width", w);
+		$("header .top_line").css("width", w);
 		$(".overlay").css("width", w);
 		$("footer").css("width", w);
+		$("header nav").css("width", w);
 		var delta = (w - $("body").css("width").replace("px",""))/2;
 		var pdl = delta+180
+		$("header .top_line").css("left", -delta).css("padding-left",pdl-10).css("padding-right",pdl-10);
 		$("header nav").css("left", -delta).css("padding-left",pdl);
 		$("footer").css("left", -delta).css("padding-left",pdl).css("padding-right",pdl);
 		$(".overlay").css("left", -delta).css("padding-left",pdl);
 	}
 	else{
+		$("header .top_line").css("left", 0).css("padding-left", 164).css("width", 1280);
 		$("header nav").css("left", 0).css("padding-left", 164).css("width", 1280);
 		$("footer").css("left", 0).css("padding-left", 164).css("width", 1280);
 		$(".overlay").css("left", 0).css("padding-left", 164).css("width", 1280);
