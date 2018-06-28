@@ -1,5 +1,5 @@
 $(function() {
-
+// Расположение хедера и футера на всю ширину окна
 function resizeNav(){
 	var w = $(window).width();
 	if (w>1280){
@@ -10,7 +10,7 @@ function resizeNav(){
 		var delta = (w - $("body").css("width").replace("px",""))/2;
 		var pdl = delta+180
 		$("header .top_line").css("left", -delta).css("padding-left",pdl-10).css("padding-right",pdl-10);
-		$("header nav").css("left", -delta).css("padding-left",pdl);
+		$("header nav").css("left", -delta).css("padding-left",pdl-12);
 		$("footer").css("left", -delta).css("padding-left",pdl).css("padding-right",pdl);
 		$(".overlay").css("left", -delta).css("padding-left",pdl);
 	}
@@ -26,6 +26,7 @@ $(window).resize(function(){
 })
 resizeNav()
 
+//Слайдеры
 $('.slider_top').slick({
 	dots: true
 });
@@ -62,5 +63,23 @@ $(".slider_bottom").slick({
 		});
 		return false;
 	});
+
+	//Скрипт, изменяющий цвет элементов бокового меню
+	$(".aside ul li").each(function(){
+		var that = $(this);
+
+		function changeColor(word,color){
+			var str = that.children("a").html();
+			var correct = str.replace(new RegExp(word, 'g'), '<span class="'+word+'">'+word+'</span>')
+			that.children("a").html(correct);
+			that.children("a").children('.'+word).css("color", color);
+		}
+
+		changeColor('MINIA','#ff6600');
+		changeColor('MODEON','#c20000');
+		changeColor('ARION','#939697');
+		changeColor('VARIUS','#a2de00');
+		changeColor('CONTEO','#0094ec');
+	})
 
 });
